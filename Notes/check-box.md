@@ -128,6 +128,12 @@ function App() {
 
 export default App;
 ```
+이렇게 하게 되면 아래와 같은 동작이 가능해 진다.
+
+![화면-기록-2022-11-15-오후-1 56 25](https://user-images.githubusercontent.com/98517680/201830199-1fd2c6d2-13d8-4c0f-a451-9ab2f393f4b5.gif)
+
+
+
 __checked 와 onChange를 같이 사용하지 않으면 controlled vs uncontrolled error가 발생하니 꼭 같이 사용 할 수 있도록!__
 ## 결론
 
