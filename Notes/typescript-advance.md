@@ -1,6 +1,6 @@
 # 유용한 타입스크립트 Advance.ver
 
-_(계속 채워나갈 예정임.)_
+_(계속 채워나갈 예정임)_
 
 ## 1. Omit
 
@@ -103,7 +103,7 @@ interface OptionalTodoInterface {
 #### 둘을 같이 사용한다면,
 
 ```typescript
-// User의 Information 타입을 정의한다면 아래와 같이 할 수 있지만, 
+// User의 Information 타입을 정의한다면 아래와 같이 할 수 있지만,
 interface UserInformationOne {
   id: string;
   uid: string;
@@ -113,7 +113,7 @@ interface UserInformationOne {
   phone?: string;
 }
 
-// 이를 둘로 난눈다면,
+// 필요에 따 이를 둘로 난눈다면, 아래와 같이 나눌 수 있다.
 interface RequiredUserInformation {
   id: string;
   uid: string;
@@ -126,7 +126,32 @@ interface OptionalUserInformation {
   phone: string;
 }
 
-type UserInformationTwo = RequiredUserInformation & Partial<OptionalUserInformation>;
+type UserInformationTwo = Required<UserInformation> &
+  Partial<OptionalUserInformation>;
 
-// UserInformationOne와 UserInformationTwo는 동일한 타입이다.
+// 이번에도 UserInformationOne와 UserInformationTwo는 동일한 타입이다.
+```
+
+## 3. Record Type
+
+- Record는 타입을 정의한 상태에서 새로운 객체를 생성하고자 할 때, 그 안에는 key와 value의 타입을 기존의 타입을 기반으로 정해줄 수 있는 유틸리티이다.
+
+#### Record 예시
+
+- 입사한 사람들을 정보를 볼 수 있는 객체를 설정하고자 한다는 상황.
+
+```typescript
+interface HumanInfo {
+  age: number;
+  adrress: string;
+}
+
+type HumanName = "David" | "James" | "Lily" | "Jack";
+
+const Human: Record<HumanName, HumanInfo> = {
+  David: { age: 25, address: "street 25" },
+  James: { age: 38, address: "street 38" },
+  Lily: { age: 30, address: "street 30" },
+  Jack: { age: 22, address: "street 22" },
+};
 ```
