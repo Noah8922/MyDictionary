@@ -8,7 +8,7 @@ _(계속 채워나갈 예정임)_
 - MUI 같은 경우, 받아온 Props 타입에서 내가 재정의 하고 싶은 부분을 제외하여 정의할 때도 자주 사용
 - 보통 가장 큰 범위의 interface를 작성한 후 그 안에서 Omit을 사용하여 부분 사용을 가능케 할 수 있다.
 
-#### 예시
+#### 예시1
 
 ```typescript
 interface ProductType {
@@ -51,6 +51,34 @@ const nowLeftProductList : LeftProduct[] = [
     stock: 10,
   },
 ]
+```
+
+#### 예시2 (MUI에서 특정 타입 빼고 받을 때 - component화)
+
+```typescript
+import { Button, ButtonProps, styled } from '@mui/material';
+import React from 'react';
+
+interface IButtonProps extends Omit<ButtonProps, "variant"> {
+}
+
+const RoundedButton: React.FC<IButtonProps> = ({
+  ...others
+}) => {
+  return (
+    <RoundedStyledButtonn
+      variant='contained'
+      {...others}
+    />
+  )
+};
+
+const RoundedStyledButtonn = styled(Button)(() => ({
+  borderRadius: '40px',
+  height : 80
+}))
+
+export {  RoundedButton };
 ```
 
 ## 2. Partial & Required
