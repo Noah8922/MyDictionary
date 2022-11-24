@@ -6,3 +6,4 @@
 - [Check-Box](https://github.com/Noah8922/MyDictionary/blob/master/Notes/check-box.md)
 - [Typescript-Advance](https://github.com/Noah8922/MyDictionary/blob/master/Notes/typescript-advance.md)
 - [UseInfiniteQuery](https://github.com/Noah8922/MyDictionary/blob/master/Notes/useInfinityQuery.md)
+- [AutoComplete](https://github.com/Noah8922/MyDictionary/blob/master/Notes/AutoComplete_with_useInfinityQuery.md)
