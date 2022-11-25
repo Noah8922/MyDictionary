@@ -171,6 +171,7 @@ const duplicateKeys = Object.entries(data).map(item => {
 제품 ID가 1인 제품에 대한 정보가 2개이고, ID가 2인 제품에 대한 정보가 2개이기 때문에, 조금 깔끔한 표현을 위해서는 중복되는 ID는 표에서 안 보여주면 어떨까 싶었다.
 
 대략 이런 모습이다.
+
 ![image](https://user-images.githubusercontent.com/98517680/203961350-9cd5b166-b3a9-4879-93d8-aa507bd365c9.png)
 
 이렇게 하기 위해서는 배열에서 index로 조회한 현재 값과 이전값을 비교하여 보여줄 지 말지 정하는 함수가 필요하다고 생각했다.
